@@ -41,7 +41,20 @@
 <script type="text/javascript">
 
 	// your solution here
-
+  $(document).ready(() => {
+    var addButton = true;
+    var intervalId = setInterval(addCircle, 1000);
+    $('.btn').on('click', () => {
+      addButton = false;
+    });
+    function addCircle() {
+      if (addButton) {
+        $('.shape-container').append('<div class="p2-circle bg-blue"></div>');
+      } else {
+        clearInterval(intervalId);
+      }
+    }
+  });
 </script>
 </body>
 </html>
